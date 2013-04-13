@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Content/JS/JQuery-1.9.1.js"></script>
+    <script type="text/javascript" src="~/Content/JS/StackTrace.js"></script>
+    <script type="text/javascript" src="~/Content/JS/ErrorReporter.js"></script>
+    <script type="text/javascript" src="~/Content/JS/JScript1.js"></script>
+    <title>Index</title>
+</head>
+<body data-report-url="@Url.Action("Report")">
+    <div>
+        <button id="test">Cause Error</button>
+    </div>
+</body>
+</html>
