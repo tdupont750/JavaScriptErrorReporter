@@ -15,14 +15,14 @@ namespace JavaScriptErrorReporter.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public EmptyResult Report(string error)
+        public EmptyResult Report(string error, string url)
         {
             var stackTrace = Request.Form.GetValues("stackTrace[]");
 
             if (!String.IsNullOrWhiteSpace(error) && stackTrace != null && stackTrace.Any())
             {
                 var hash = GetUniqueHash(stackTrace);
-                ReportError(error, stackTrace, hash);
+                ReportError(error, url, stackTrace, hash);
             }
                 
             return new EmptyResult();
@@ -51,7 +51,7 @@ namespace JavaScriptErrorReporter.Controllers
                 .GetHashCode();
         }
 
-        private void ReportError(string error, string[] stackTrace, int hash)
+        private void ReportError(string error, string url, string[] stackTrace, int hash)
         {
             // TODO
         }

@@ -69,6 +69,7 @@
             type: 'POST',
             data: {
                 error: error,
+                url: window.location,
                 stackTrace: stackTrace
             }
         });
